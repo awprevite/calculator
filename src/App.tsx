@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { evaluate } from 'mathjs';
+import { isOperator, hasOpenParen } from '../util/conditionCheck'
 import Button from './Button';
 
 function App() {
@@ -31,19 +32,6 @@ function App() {
   }
 
   /* ----- Text Input Handler Helpers ----- */
-
-  const operators = ['+', '-', '*', '/', '%', '^'];
-  const digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
-  function isOperator(char: string) {
-    return operators.includes(char);
-  }
-  function isDigit(char: string) {
-    return digits.includes(char);
-  }
-  function hasOpenParen(expr: string) {
-    return (expr.match(/\(/g) || []).length > (expr.match(/\)/g) || []).length;
-  }
 
   function canAppend(current: string, next: string): boolean {
     const last = current.slice(-1)
@@ -118,7 +106,7 @@ function App() {
       return false
     }
     if(hasOpenParen(current)){
-      setErrorMessage('Input cannot have open parentheses')
+      setErrorMessage('Input cannot have open parenthesis')
       return false
     }
     if(current.length === 0){

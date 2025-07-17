@@ -1,69 +1,55 @@
-# React + TypeScript + Vite
+# Calculator
+A lightweight calculator with a clean modern structure  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Calculator](public/calc.png)  
 
-Currently, two official plugins are available:
+## Live Demo
+[Try it here]()
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
+- **Build Tool**: Vite  
+- **Frontend**: React, Typescript, Tailwind CSS  
+- **Testing**: Vitest, Testing Library (react, jest-dom)  
 
-## Expanding the ESLint configuration
+## Features
+### Basic math operations
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Operation     | Symbol |
+|---------------|--------|
+| Addition      | `+`    |
+| Subtraction   | `-`    |
+| Multiplication| `*`    |
+| Division      | `/`    |
+| Modulus       | `%`    |
+| Exponent      | `^`    |
+| Parenthesis   | `()`   |
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Error handling
+Handles most invalid expressions  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+![Calculator with error](public/calcError.png)  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Keyboard and mouse input
+Keyboard keys and mouse clicks will trigger their respective buttons
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Typing `1 + 2` on the keyboard updates the display and can be computed with `Enter`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Testing
+Includes Unit and Integration tests for select functions and UI interactions  
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+![Test coverage](public/testCoverage.png)
+
+## Getting started
+1. Clone the repo  
+`git clone https://github.com/awprevite/calculator.git`  
+`cd calculator`  
+2. Install dependencies  
+`npm install`  
+3. Start the dev server  
+`npm run dev`  
+4. Open in browser  
+Visit `localhost: 5173`  
+5. Run tests and view coverage  
+`npm run test`  
+`npm run coverage` 
+
