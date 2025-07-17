@@ -4,7 +4,7 @@ A lightweight calculator with a clean modern structure
 ![Calculator](public/calc.png)  
 
 ## Live Demo
-[Try it here]()
+[Try it here](https://calculator-chi-three-66.vercel.app/)
 
 ## Technologies
 - **Build Tool**: Vite  
