@@ -16,3 +16,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+button.active {
+  transform: scale(0.8);
+  transition: transform 100ms ease-in-out;
+}
